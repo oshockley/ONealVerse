@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  base: '/ONealVerse/',
+  base: process.env.NODE_ENV === 'production' ? '/ONealVerse/' : '/',
   root: '.',
   server: {
     port: 3000,
