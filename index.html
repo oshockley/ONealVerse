@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O'Neal Shockley | Portfolio</title>
+    <link rel="stylesheet" href="src/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <div class="glitch" data-text="PORTFOLIO">PORTFOLIO</div>
+            </div>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+            <div class="loading-text">Initializing 3D Experience...</div>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div id="container">
+        <!-- Canvas for Three.js -->
+        <canvas id="webgl"></canvas>
+        
+        <!-- UI Overlay -->
+        <div id="ui-overlay">
+            <!-- Navigation Menu -->
+            <nav id="nav-menu">
+                <div class="nav-item" data-section="home">
+                    <span class="nav-icon">🏠</span>
+                    <span class="nav-text">Home</span>
+                </div>
+                <div class="nav-item" data-section="about">
+                    <span class="nav-icon">👨‍💻</span>
+                    <span class="nav-text">About</span>
+                </div>
+                <div class="nav-item" data-section="skills">
+                    <span class="nav-icon">⚡</span>
+                    <span class="nav-text">Skills</span>
+                </div>
+                <div class="nav-item" data-section="projects">
+                    <span class="nav-icon">🎮</span>
+                    <span class="nav-text">Projects</span>
+                </div>
+                <div class="nav-item" data-section="contact">
+                    <span class="nav-icon">📧</span>
+                    <span class="nav-text">Contact</span>
+                </div>
+            </nav>
+
+            <!-- Content Panels -->
+            <div id="content-panels">
+                <!-- Home Panel -->
+                <div class="content-panel active" id="home-panel">
+                    <div class="panel-content">
+                        <h1 class="main-title">
+                            <span class="title-line">O'Neal Shockley</span>
+                            <span class="title-line glitch" data-text="Cosmic Developer">Portfolio</span>
+                        </h1>
+                        <p class="subtitle">Full-Stack Developer</p>
+                        <div class="cta-buttons">
+                            <button class="cta-btn primary" data-action="explore">Explore Cosmic Portfolio</button>
+                            <button class="cta-btn secondary" data-action="github" onclick="window.open('https://github.com/oshockley', '_blank')">View GitHub</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- About Panel -->
+                <div class="content-panel" id="about-panel">
+                    <div class="panel-content">
+                        <h2>About Me</h2>
+                        <div class="about-content">
+                            <p>I'm O'Neal Shockley, a passionate software developer exploring the frontiers of technology. I specialize in creating modern web applications and AI-powered solutions that push the boundaries of what's possible.</p>
+                            <p>My journey includes building everything from game-themed portfolios to sophisticated AI tools like DreamLayer - all while exploring the cosmic possibilities of code and creativity.</p>
+                            <p><em>Watch the character exploring this virtual universe - that's my digital avatar wandering through the cosmic landscape I've created with Three.js!</em></p>
+                            <div class="stats-grid">
+                                <div class="stat-item">
+                                    <span class="stat-number">149+</span>
+                                    <span class="stat-label">GitHub Contributions</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number">10+</span>
+                                    <span class="stat-label">Active Repositories</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number">12+</span>
+                                    <span class="stat-label">Technologies</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skills Panel -->
+                <div class="content-panel" id="skills-panel">
+                    <div class="panel-content">
+                        <h2>Technical Skills</h2>
+                        <div class="skills-grid">
+                            <div class="skill-category">
+                                <h3>Frontend</h3>
+                                <div class="skill-items">
+                                    <span class="skill-tag">React</span>
+                                    <span class="skill-tag">TypeScript</span>
+                                    <span class="skill-tag">JavaScript</span>
+                                    <span class="skill-tag">HTML5</span>
+                                    <span class="skill-tag">CSS3</span>
+                                    <span class="skill-tag">Three.js</span>
+                                    <span class="skill-tag">WebGL</span>
+                                    <span class="skill-tag">Vite</span>
+                                </div>
+                            </div>
+                            <div class="skill-category">
+                                <h3>Backend & Tools</h3>
+                                <div class="skill-items">
+                                    <span class="skill-tag">Node.js</span>
+                                    <span class="skill-tag">Python</span>
+                                    <span class="skill-tag">Git</span>
+                                    <span class="skill-tag">VS Code</span>
+                                    <span class="skill-tag">npm</span>
+                                    <span class="skill-tag">Webpack</span>
+                                </div>
+                            </div>
+                            <div class="skill-category">
+                                <h3>AI & Graphics</h3>
+                                <div class="skill-items">
+                                    <span class="skill-tag">ComfyUI</span>
+                                    <span class="skill-tag">Stable Diffusion</span>
+                                    <span class="skill-tag">AI/ML</span>
+                                    <span class="skill-tag">GSAP</span>
+                                    <span class="skill-tag">3D Modeling</span>
+                                    <span class="skill-tag">Shader Programming</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projects Panel -->
+                <div class="content-panel" id="projects-panel">
+                    <div class="panel-content">
+                        <h2>Featured Projects</h2>
+                        <div class="projects-gallery">
+                            <!-- Recent & Active Projects -->
+                            <div class="project-section">
+                                <h3>Recent & Active</h3>
+                                <div class="projects-grid">
+                                    <div class="project-card featured" data-project="0" onclick="window.open('https://github.com/oshockley/DreamLayer', '_blank')">
+                                        <div class="project-image">
+                                            <div class="project-placeholder">🤖</div>
+                                            <div class="project-status active">Active</div>
+                                        </div>
+                                        <h4>DreamLayer AI</h4>
+                                        <p>Modern Stable Diffusion WebUI with ComfyUI backend</p>
+                                        <div class="project-tags">
+                                            <span>React</span>
+                                            <span>Python</span>
+                                            <span>AI/ML</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-card" data-project="1" onclick="window.open('https://github.com/oshockley/ShockStack', '_blank')">
+                                        <div class="project-image">
+                                            <div class="project-placeholder">⚡</div>
+                                            <div class="project-status active">Active</div>
+                                        </div>
+                                        <h4>ShockStack</h4>
+                                        <p>Modern React app with Vite and Tailwind CSS</p>
+                                        <div class="project-tags">
+                                            <span>React</span>
+                                            <span>Vite</span>
+                                            <span>Tailwind</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-card" data-project="2" onclick="window.open('https://github.com/oshockley/LevelUpPortfolio', '_blank')">
+                                        <div class="project-image">
+                                            <div class="project-placeholder">🎮</div>
+                                            <div class="project-status complete">Complete</div>
+                                        </div>
+                                        <h4>LevelUpPortfolio</h4>
+                                        <p>Game-themed React portfolio with retro aesthetic</p>
+                                        <div class="project-tags">
+                                            <span>React</span>
+                                            <span>CSS3</span>
+                                            <span>Gaming</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Full-Stack Applications -->
+                            <div class="project-section">
+                                <h3>Full-Stack Applications</h3>
+                                <div class="projects-grid">
+                                    <div class="project-card" onclick="window.open('https://github.com/oshockley/APISocialNetwork', '_blank')">
+                                        <div class="project-image">
+                                            <div class="project-placeholder">🌐</div>
+                                        </div>
+                                        <h4>APISocialNetwork</h4>
+                                        <p>Social network API with user management</p>
+                                        <div class="project-tags">
+                                            <span>Node.js</span>
+                                            <span>MongoDB</span>
+                                            <span>API</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-card" onclick="window.open('https://github.com/oshockley/Restaurant-Web', '_blank')">
+                                        <div class="project-image">
+                                            <div class="project-placeholder">🍽️</div>
+                                        </div>
+                                        <h4>Restaurant-Web</h4>
+                                        <p>Modern restaurant website with responsive design</p>
+                                        <div class="project-tags">
+                                            <span>HTML5</span>
+                                            <span>CSS3</span>
+                                            <span>JavaScript</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-card" onclick="window.open('https://github.com/oshockley/NeuroBank', '_blank')">
+                                        <div class="project-image">
+                                            <div class="project-placeholder">🏦</div>
+                                        </div>
+                                        <h4>NeuroBank</h4>
+                                        <p>Banking system with OOP design and validation</p>
+                                        <div class="project-tags">
+                                            <span>Python</span>
+                                            <span>OOP</span>
+                                            <span>Finance</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Productivity & Management Tools -->
+                            <div class="project-section">
+                                <h3>Productivity & Management</h3>
+                                <div class="projects-grid">
+                                    <div class="project-card" onclick="window.open('https://github.com/oshockley/KanBano', '_blank')">
+                                        <div class="project-image">
+                                            <div class="project-placeholder">�</div>
+                                        </div>
+                                        <h4>KanBano</h4>
+                                        <p>Kanban board application for project management</p>
+                                        <div class="project-tags">
+                                            <span>TypeScript</span>
+                                            <span>React</span>
+                                            <span>Management</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-card" onclick="window.open('https://github.com/oshockley/ZenFocus', '_blank')">
+                                        <div class="project-image">
+                                            <div class="project-placeholder">🧘</div>
+                                        </div>
+                                        <h4>ZenFocus</h4>
+                                        <p>Meditation and productivity app for focus</p>
+                                        <div class="project-tags">
+                                            <span>JavaScript</span>
+                                            <span>HTML5</span>
+                                            <span>Wellness</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-card" onclick="window.open('https://github.com/oshockley/TheExpenseTracker', '_blank')">
+                                        <div class="project-image">
+                                            <div class="project-placeholder">💰</div>
+                                        </div>
+                                        <h4>TheExpenseTracker</h4>
+                                        <p>Financial tracking for personal expenses</p>
+                                        <div class="project-tags">
+                                            <span>JavaScript</span>
+                                            <span>Local Storage</span>
+                                            <span>Finance</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- CLI & Specialized Tools -->
+                            <div class="project-section">
+                                <h3>CLI & Specialized Tools</h3>
+                                <div class="projects-grid">
+                                    <div class="project-card" onclick="window.open('https://github.com/oshockley/MotorCrafter', '_blank')">
+                                        <div class="project-image">
+                                            <div class="project-placeholder">🚗</div>
+                                        </div>
+                                        <h4>MotorCrafter</h4>
+                                        <p>Interactive CLI for vehicle creation and management</p>
+                                        <div class="project-tags">
+                                            <span>Node.js</span>
+                                            <span>CLI</span>
+                                            <span>Inquirer</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-card" onclick="window.open('https://github.com/oshockley/Meal-Tracker', '_blank')">
+                                        <div class="project-image">
+                                            <div class="project-placeholder">🥗</div>
+                                        </div>
+                                        <h4>Meal-Tracker</h4>
+                                        <p>TypeScript app for tracking nutrition</p>
+                                        <div class="project-tags">
+                                            <span>TypeScript</span>
+                                            <span>Node.js</span>
+                                            <span>Health</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-card" onclick="window.open('https://github.com/oshockley/osportfolio', '_blank')">
+                                        <div class="project-image">
+                                            <div class="project-placeholder">🌟</div>
+                                            <div class="project-status active">You Are Here</div>
+                                        </div>
+                                        <h4>3D Portfolio</h4>
+                                        <p>Interactive Three.js portfolio with animated character</p>
+                                        <div class="project-tags">
+                                            <span>Three.js</span>
+                                            <span>WebGL</span>
+                                            <span>GSAP</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="projects-footer">
+                            <p>🚀 <strong>32+ repositories</strong> available on GitHub</p>
+                            <button class="cta-btn primary" onclick="window.open('https://github.com/oshockley?tab=repositories', '_blank')">View All Projects</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Panel -->
+                <div class="content-panel" id="contact-panel">
+                    <div class="panel-content">
+                        <h2>Get In Touch</h2>
+                        <div class="contact-content">
+                            <p>Ready to collaborate on your next project? Let's connect and build something amazing together!</p>
+                            <div class="contact-methods">
+                                <div class="contact-item" onclick="window.open('https://github.com/oshockley', '_blank')">
+                                    <span class="contact-icon">�</span>
+                                    <span class="contact-text">github.com/oshockley</span>
+                                </div>
+                                <div class="contact-item" onclick="window.open('https://www.linkedin.com/in/oneal-shockley/', '_blank')">
+                                    <span class="contact-icon">💼</span>
+                                    <span class="contact-text">linkedin.com/in/oneal-shockley</span>
+                                </div>
+                                <div class="contact-item" onclick="window.open('mailto:contact@onealshockley.dev', '_blank')">
+                                    <span class="contact-icon">�</span>
+                                    <span class="contact-text">contact@onealshockley.dev</span>
+                                </div>
+                            </div>
+                            <div class="contact-cta">
+                                <p>Interested in my work? Check out my repositories and let's discuss how we can work together!</p>
+                                <button class="cta-btn primary" onclick="window.open('https://github.com/oshockley', '_blank')">View My GitHub</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Hint -->
+            <div id="interaction-hint">
+                <div class="hint-text">
+                    <span class="hint-icon">🚀</span>
+                    <span>Drag to explore the cosmos • Scroll to zoom • Discover the universe!</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Control Buttons -->
+    <button id="audio-toggle" class="control-btn">
+        <span class="audio-icon">🔊</span>
+    </button>
+
+    <button id="fullscreen-toggle" class="control-btn">
+        <span class="fullscreen-icon">⛶</span>
+    </button>
+    
+    <button id="spaceship-trigger" class="control-btn">
+        <span class="spaceship-icon">🚀</span>
+    </button>
+
+    <script type="module" src="src/main.js"></script>
+</body>
+</html>

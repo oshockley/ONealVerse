@@ -1,0 +1,22 @@
+{
+  "name": "3d-developer-portfolio",
+  "version": "1.0.0",
+  "description": "Interactive 3D video game portfolio showcasing software development skills",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": ["portfolio", "threejs", "3d", "webgl", "game", "developer"],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "vite": "^5.0.0"
+  },
+  "dependencies": {
+    "three": "^0.160.0",
+    "gsap": "^3.12.2",
+    "lil-gui": "^0.19.0"
+  }
+}
